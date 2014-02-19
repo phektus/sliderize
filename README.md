@@ -41,6 +41,6 @@ Todo:
 License
 ----
 
-MIT
+MIT (except for images in the samples/ directory)
 
 By [Arbie Samong](http://arbie.org/)
