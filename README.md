@@ -37,6 +37,7 @@ Todo:
   - Tests
   - Improve look for controls
   - Add moar options
+  - Add pagination
 
 License
 ----
