@@ -1,10 +1,12 @@
 <!doctype html>
 <head>
   <title>Carousel slider</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/jquery.sliderize.min.css" />
 </head>
 <body>
+  <h1>Sliderize examples</h1>
 
+  <h3>By class:</h3>
   <ul class="slider">
     <li><img src="img/cat1.png"></li>
     <li><img src="img/cat2.png"></li>
@@ -22,6 +24,7 @@
   </ul>
   <br/>
 
+  <h3>By specific element:</h3>
   <ul id="mySlide">
     <li><img src="img/dog1.png"></li>
     <li><img src="img/dog2.png"></li>
@@ -30,7 +33,7 @@
   </ul>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="js/sliderize.js"></script>
+  <script src="js/jquery.sliderize.min.js"></script>
   <script>
     $('.slider').sliderize({
       slideSpeed: 200,
