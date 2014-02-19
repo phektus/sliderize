@@ -6,6 +6,12 @@
             var ctr = 0;
             var children = $(that).children();
             var slideSpeed = params.slideSpeed || 100;
+            var _id = $(that).attr('id');
+
+            if(!_id) {
+                _id = 'slider-' + (Math.floor(Math.random()*1000)+500);
+                $(that).attr('id', _id);
+            }
 
             // remove bullet and hide all
             children.css('list-style', 'none');
@@ -21,6 +27,14 @@
                     children.eq(ctr).fadeIn(slideSpeed);
                 });
             }, 2 * 1000);
+
+            $(that).parent().append([
+                '<button id="btn-prev-',
+                _id,
+                '" class="btn-slider-prev">',
+                '<',
+                '</button>'
+            ].join(''));
         });
     };
 }(jQuery));
