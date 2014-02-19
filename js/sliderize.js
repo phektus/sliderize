@@ -9,6 +9,7 @@
             var slideSpeed = params.slideSpeed || 100;
             var maxWidth = params.maxWidth ? params.maxWidth + 'px' : '100%';
             var _id = $(that).attr('id');
+            var justSlid = false;
             var slide;
 
             // assign id
@@ -19,13 +20,13 @@
             $(that).addClass('slider-list');
 
             // create wrapper and append this element
-            $(that).parent().prepend([
+            $(that).parent().append([
                 '<div class="slider-wrapper" id="slider-wrapper-',
                 _id,
                 '"></div>'
             ].join(''));
-            $('#slider-wrapper-'+_id).append($(that).detach());
             $('#slider-wrapper-'+_id).css('max-width', maxWidth);
+            $(that).wrap($('#slider-wrapper-'+_id));
 
             // remove bullet and hide all
             children.css('list-style', 'none');
@@ -34,7 +35,6 @@
             // slider counter
             slide = function(advance) {
                 // fade out current         
-                console.log('sliding:', _id);
                 children.eq(ctr).fadeOut(slideSpeed, function() {
                     ctr += advance ? 1 : -1;
                     if(advance && ctr === children.length) ctr = 0;
@@ -44,6 +44,12 @@
                 });
             };
             setInterval(function() {
+                // skip slide if controls were just pressed
+                if(justSlid === true) {
+                    justSlid = false;
+                    return;
+                }
+                // perform slide
                 slide.call(that, true);
             }, params.maxWait || 2000);
 
@@ -81,9 +87,11 @@
             
             // control actions
             $('#btn-prev-'+_id).click(function() {
+                justSlid = true;
                 slide(false);
             });
             $('#btn-next-'+_id).click(function() {
+                justSlid = true;
                 slide(true);
             });
         });
