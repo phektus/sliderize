@@ -1,0 +1,27 @@
+.slider-wrapper {
+    position: relative;
+    display: block;
+}
+
+.slider {
+    margin: 0;
+    padding: 0;
+}
+
+
+.btn-slider-controls {
+    text-decoration: none;
+    font-size: 2em;
+    padding: 5px;
+    position: absolute;
+    display: none;
+    top: 45%;
+}
+
+.btn-slider-control-prev {
+    left: 0;
+}
+
+.btn-slider-control-next {
+    right: 0;
+}
