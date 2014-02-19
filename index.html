@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
   <ul class="slider">
     <li><img src="img/cat1.png"></li>
     <li><img src="img/cat2.png"></li>
@@ -13,20 +14,19 @@
     <li><img src="img/cat6.png"></li>
   </ul>
   <br/>
+
   <ul class="slider">
     <li><img src="img/cat4.png"></li>
     <li><img src="img/cat3.png"></li>
     <li><img src="img/cat6.png"></li>
   </ul>
   <br/>
-  <ul class="slider">
-    <li><img src="img/cat4.png"></li>
-    <li><img src="img/cat1.png"></li>
-    <li><img src="img/cat2.png"></li>
-    <li><img src="img/cat3.png"></li>
-    <li><img src="img/cat4.png"></li>
-    <li><img src="img/cat3.png"></li>
-    <li><img src="img/cat6.png"></li>
+
+  <ul id="mySlide">
+    <li><img src="img/dog1.png"></li>
+    <li><img src="img/dog2.png"></li>
+    <li><img src="img/dog3.png"></li>
+    <li><img src="img/dog4.png"></li>
   </ul>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -35,6 +35,11 @@
     $('.slider').sliderize({
       slideSpeed: 200,
       maxWidth: 300
+    });
+    $('#mySlide').sliderize({
+      slideSpeed: 200,
+      maxWidth: 300,
+      maxWait: 1500
     });
   </script>
 </body>
