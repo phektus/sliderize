@@ -20,5 +20,10 @@
     font-weight: bold;
 }
 
+.centerize {
+    text-align: center;
+}
 
-
+.break {
+    page-break: always;
+}
