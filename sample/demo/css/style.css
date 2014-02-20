@@ -1,26 +1,24 @@
 .logo {
-    margin: 20px 20px 0 0;
     overflow: auto;
 }
 
 .logo-image {
     float: left;
 }
+
+.logo-image img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 0 0;
+}
+
 .logo-image img {
     display: block;
 }
-.logo-content {
-    margin-left: 20px;
+
+.logo a {
+    font-weight: bold;
 }
 
-.logo-content h1 {
-    margin-top: 40px;
-    font-weight: bold;
-    font-size: 400%;
-    line-height: 50%;
-}
 
-.logo-content span {
-    font-weight: bold;
-    font-size: 200%;
-}
+
