@@ -1,6 +1,7 @@
 .slider-wrapper {
     position: relative;
     display: block;
+    max-width: 100%;
 }
 
 .slider-list {
@@ -8,14 +9,23 @@
     padding: 0;
 }
 
+.slider-wrapper img {
+    max-width: 100%;
+}
 
 .btn-slider-controls {
-    text-decoration: none;
     font-size: 2em;
     padding: 5px;
     position: absolute;
     display: none;
-    top: 45%;
+    top: 38%;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.btn-slider-controls, .btn-slider-controls:hover {
+    text-decoration: none;
 }
 
 .btn-slider-control-prev {

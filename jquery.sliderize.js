@@ -7,7 +7,6 @@
             var children = $(that).children();
             var params = _params || {};
             var slideSpeed = params.slideSpeed || 100;
-            var maxWidth = params.maxWidth ? params.maxWidth + 'px' : '100%';
             var _id = $(that).attr('id');
             var justSlid = false;
             var slide;
@@ -25,7 +24,6 @@
                 _id,
                 '"></div>'
             ].join(''));
-            $('#slider-wrapper-'+_id).css('max-width', maxWidth);
             $(that).wrap($('#slider-wrapper-'+_id));
 
             // remove bullet and hide all
@@ -54,36 +52,24 @@
             }, params.maxWait || 2000);
 
             // create controls
-            $('#slider-wrapper-'+_id).append([
-                '<button id="btn-prev-',
-                _id,
-                '" class="',
-                'btn-slider-controls ',
-                'btn-slider-control-'+_id,
-                ' btn-slider-control-prev',
-                '">',
-                '<',
-                '</button>'
-            ].join(''));
+            $('#slider-wrapper-'+_id).append('<a href="#" id="btn-prev-'+_id+'"><</a>');
+            $('#btn-prev-'+_id).addClass('btn-slider-controls');
+            $('#btn-prev-'+_id).addClass('btn-slider-control-'+_id);
+            $('#btn-prev-'+_id).addClass('btn-slider-control-prev');
+            $('#btn-prev-'+_id).css('color', params.controlColor || '#FFF');
 
-            $('#slider-wrapper-'+_id).append([
-                '<button id="btn-next-',
-                _id,
-                '" class="',
-                'btn-slider-controls ',
-                'btn-slider-control-'+_id,
-                ' btn-slider-control-next',
-                '">',
-                '>',
-                '</button>'
-            ].join(''));
+            $('#slider-wrapper-'+_id).append('<a href="#" id="btn-next-'+_id+'">></a>');
+            $('#btn-next-'+_id).addClass('btn-slider-controls');
+            $('#btn-next-'+_id).addClass('btn-slider-control-'+_id);
+            $('#btn-next-'+_id).addClass('btn-slider-control-next');
+            $('#btn-next-'+_id).css('color', params.controlColor || '#FFF');
 
             // hover
             $('#slider-wrapper-'+_id).hover(function() {
                 $('.btn-slider-control-'+_id).show();
             }, function() {
                 $('.btn-slider-control-'+_id).hide();
-            });
+            });           
             
             // control actions
             $('#btn-prev-'+_id).click(function() {

@@ -31,11 +31,11 @@ Options:
   - slideSpeed - how fast the image changes
   - maxWidth - maximum width of each slide
   - maxWait - how long each slide interval is
+  - controlColor - color for the controls (eg., #FFFFFF)
 
 Todo:
 -------
   - Tests
-  - Improve look for controls
   - Add moar options
   - Add pagination
 
