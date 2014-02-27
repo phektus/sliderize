@@ -23,8 +23,14 @@ Usage:
         });
 
 Testing:
----------
+-------
 Check out the samples/ folder
+
+Building:
+-------
+    npm install -g uglifyjs
+    npm install -g cssmin
+    ./build.sh
 
 Options:
 -------
