@@ -2,6 +2,7 @@
     position: relative;
     display: block;
     max-width: 100%;
+    overflow: hidden;
 }
 
 .slider-list {
@@ -34,4 +35,11 @@
 
 .btn-slider-control-next {
     right: 0;
+}
+
+.slider-nextChild {
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
 }
