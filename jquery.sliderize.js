@@ -37,26 +37,32 @@
             children.not(':first').hide();
 
             // slider counter
-            slide = function(currentChild, nextChild) {
+            slide = function(advance) {
+                currentChild = children.eq(ctr);
+                ctr += (advance ? 1 : -1);
+
+                if(advance && ctr >= children.length) ctr = 0;
+                if(!advance && ctr === 0) ctr = children.length - 1;
+
+                nextChild = children.eq(ctr);
+
                 currentChild.css('display', 'block')
                     .css('top', 0)
                     .css('left', 0)
                     .css('position', 'absolute');                    
-                console.log('current child:', $(currentChild).css('margin-left'));
-
                 currentChild.animate({
-                    marginLeft: '-=' + slideWidth + 'px'
+                    marginLeft: (advance ? '-=' : '+=') + 
+                        slideWidth + 
+                        'px'
                 });
 
-                nextChild.css('margin-left', slideWidth+'px')
+                nextChild.css('margin-left', (advance ? slideWidth : '-'+slideWidth) +'px')
                     .css('display', 'block')
                     .css('top', 0)
                     .css('left', 0)
                     .css('position', 'relative');
-                console.log('next child:', $(nextChild).css('margin-left'));
-
                 nextChild.animate({
-                    marginLeft: '0'
+                    marginLeft: (advance ? '0' : ('+='+slideWidth+'px'))
                 });
             };
 
@@ -67,17 +73,7 @@
                     return;
                 }
                 // perform slide
-
-                var currentChild;
-                var nextChild;
-                var advance = true;
-                currentChild = children.eq(ctr);
-
-                ctr++;
-                if(ctr >= children.length) ctr = 0;
-                nextChild = children.eq(ctr);
-
-                slide.call(that, currentChild, nextChild);
+                slide.call(that, true);
             }, params.maxWait || 1000);
 
             // create controls

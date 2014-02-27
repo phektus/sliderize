@@ -32,11 +32,11 @@ Options:
   - maxWidth - maximum width of each slide
   - maxWait - how long each slide interval is
   - controlColor - color for the controls (eg., #FFFFFF)
+  - padding - distance between images 
 
 Todo:
 -------
   - Tests
-  - Add moar options
   - Add pagination
 
 License
